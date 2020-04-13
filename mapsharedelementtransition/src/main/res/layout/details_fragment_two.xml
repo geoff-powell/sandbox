@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/coordinator"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@null"
+    tools:context=".ui.details.DetailsFragment">
+
+    <ImageView
+        android:id="@+id/test"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerInside"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_scrollFlags="scroll|exitUntilCollapsed" />
+
+    <Space
+        android:id="@+id/spacer"
+        android:layout_width="match_parent"
+        android:layout_height="16dp"
+        app:layout_constraintBottom_toBottomOf="@id/test"
+        />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nested_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@drawable/rounded_card"
+        android:elevation="16dp"
+        android:fillViewport="true"
+        android:outlineProvider="background"
+        android:transitionName="bottomCard"
+        app:layout_constraintTop_toTopOf="@id/spacer"
+        app:behavior_overlapTop="16dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam dui augue, varius a libero ac, lobortis luctus enim. Donec imperdiet enim non semper varius. Nunc eleifend lacus id quam tincidunt facilisis. Suspendisse potenti. Nam sed lorem sit amet mi mattis laoreet. Nam eget vestibulum neque. Donec sed risus gravida, egestas orci et, porta erat. Mauris nec dapibus nulla, vel euismod turpis. Phasellus interdum tempus ipsum et auctor. Cras vulputate ornare turpis, ut malesuada libero interdum vitae.
+
+Sed pellentesque hendrerit lorem, a convallis eros sagittis sit amet. Curabitur arcu sapien, fermentum sit amet venenatis et, consequat nec mauris. Phasellus in laoreet quam. Duis sollicitudin risus ipsum, vel interdum neque hendrerit eu. Quisque nunc metus, ultrices eget tortor et, fringilla suscipit tellus. Etiam blandit luctus odio, sit amet sagittis quam porta sit amet. In condimentum vel neque eu posuere. Pellentesque malesuada fermentum tincidunt. Integer aliquam tellus vitae mollis varius. Etiam pretium quam sit amet convallis efficitur. Aenean mollis velit ut mi dictum finibus. Donec et eleifend dui.
+
+Morbi accumsan felis a erat bibendum pharetra. Quisque massa arcu, luctus quis orci vel, tempus tempus arcu. Integer ac lorem eu massa interdum volutpat sed sed ex. Curabitur molestie tellus id odio hendrerit, facilisis mollis est volutpat. Morbi congue augue a eros tempor, nec cursus metus porta. In auctor blandit nisl, fringilla semper nisi molestie ac. Morbi eget nulla eget dui rhoncus volutpat a nec magna. Morbi posuere venenatis mauris id rutrum. Donec quis molestie elit.
+
+Cras eget nibh vel enim luctus eleifend sed nec erat. Proin dignissim a justo vel volutpat. Proin scelerisque, lectus sed elementum ultrices, metus arcu dictum elit, id tristique quam ipsum non ligula. Aenean pharetra, tellus sed eleifend molestie, eros enim porttitor dolor, eu tempor justo nulla non enim. Ut vehicula viverra dolor a bibendum. Integer congue dolor vel odio vestibulum, nec iaculis justo dignissim. Duis vehicula nec nibh vel aliquam. Vestibulum vel rhoncus purus. Nam ut diam nec quam pellentesque condimentum sed ut ante. Morbi bibendum lectus massa, id imperdiet tellus auctor in. Ut eget blandit lectus. Aliquam iaculis nisl nec tortor sagittis, et blandit est pellentesque. Nam efficitur leo ac ex dignissim faucibus.
+
+Vestibulum dignissim sem vitae tellus tristique convallis. Mauris interdum fringilla nunc, sed pharetra nisl aliquam a. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In ultrices ut leo sit amet sodales. Nam mattis quam at ligula tincidunt, non rhoncus mi condimentum. Vivamus nec felis in ex varius gravida id vitae lectus. Quisque sagittis, ante vitae venenatis vestibulum, nisl est facilisis dolor, eu tempus odio turpis eget felis. Sed interdum maximus ligula, vitae dignissim neque fringilla sed. Ut at neque sed arcu fringilla convallis eu faucibus arcu. Sed pellentesque, dolor ac bibendum varius, ipsum augue hendrerit magna, vulputate cursus enim massa eu lectus. Nullam vel urna tempor, commodo tellus imperdiet, rutrum odio. Mauris sed lacinia est. Donec feugiat diam nec neque bibendum, id pretium odio mattis. Maecenas nibh ex, tincidunt a libero eu, porttitor ornare lacus. In hac habitasse platea dictumst. Nam ut mollis tellus." />
+
+        </FrameLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

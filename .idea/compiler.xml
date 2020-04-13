@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel>
+      <module name="androidsvg-androidsvg" target="1.8" />
+      <module name="androidsvgcompose-sample" target="1.8" />
+      <module name="Sandbox.androidsvg.androidsvg" target="1.8" />
+      <module name="Sandbox.androidsvgcompose-library" target="1.8" />
+      <module name="Sandbox.androidsvgcompose.androidsvgcompose-sample" target="1.8" />
+      <module name="Sandbox.androidsvgcompose.library" target="1.8" />
+      <module name="Sandbox.mapsharedelementtransition" target="1.8" />
+      <module name="Sandbox.svg-tester" target="1.8" />
+      <module name="svg-tester" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

@@ -1,0 +1,6 @@
+include ':mapsharedelementtransition'
+rootProject.name='Sandbox'
+include ':androidsvg:androidsvg'
+include ':svg-tester'
+include ':androidsvgcompose:library'
+include ':androidsvgcompose:androidsvgcompose-sample'
