@@ -8,6 +8,10 @@ ext.versions = [
 ]
 
 ext.deps = [
+        plugins  : [
+                androidGradlePlugin: "com.android.tools.build:gradle:7.0.0-beta04",
+                kotlin             : "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotlin",
+        ],
         kotlin   : [
                 core: "org.jetbrains.kotlin:kotlin-stdlib:$versions.kotlin"
         ],
@@ -17,7 +21,7 @@ ext.deps = [
                 material  : "androidx.compose.material:material:$versions.compose",
                 tooling   : "androidx.compose.ui:ui-tooling:$versions.compose",
                 foundation: "androidx.compose.foundation:foundation:$versions.compose",
-                framework: "androidx.compose.framework:framework:$versions.compose",
+                framework : "androidx.compose.framework:framework:$versions.compose",
                 junit     : "androidx.compose.ui-test-junit4:ui-test-junit4:$versions.compose",
         ],
         appcompat: 'androidx.appcompat:appcompat:$versions.appcompat',
