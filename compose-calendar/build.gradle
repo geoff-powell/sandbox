@@ -1,22 +1,20 @@
-apply plugin: 'com.android.application'
-apply plugin: 'kotlin-android'
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+}
 
 android {
-    project.ext {
-        compose_version = '0.1.0-dev06'
-    }
-
     compileSdkVersion 30
+    buildToolsVersion libs.versions.buildTools.get()
 
     defaultConfig {
-        applicationId "com.greenmist.android.androidsvgcompose.sample"
-        minSdkVersion 22
+        applicationId "sandbox.calendar.compose"
+        minSdkVersion 21
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-
     }
 
     buildTypes {
@@ -26,6 +24,9 @@ android {
         }
     }
     compileOptions {
+        // Flag to enable support for the new language APIs
+        coreLibraryDesugaringEnabled true
+
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
@@ -33,8 +34,8 @@ android {
         jvmTarget = '1.8'
     }
     buildFeatures {
+        // Enables Jetpack Compose for this module
         compose true
-        viewBinding true
     }
     composeOptions {
         kotlinCompilerExtensionVersion libs.versions.compose.get()
@@ -43,24 +44,24 @@ android {
 
 dependencies {
 
-    implementation fileTree(dir: "libs", include: ["*.jar"])
-
-    implementation project(":androidsvgcompose:library")
-
     implementation libs.kotlin.core
     implementation libs.core.ktx
     implementation libs.appcompat
-
-//    implementation libs.compose.layout
+    implementation libs.material
+    implementation libs.compose.ui
     implementation libs.compose.material
     implementation libs.compose.tooling
-//    implementation libs.compose.framework
+    implementation libs.compose.foundation
+    implementation 'androidx.activity:activity-compose:1.3.0'
+    implementation libs.lifecycle.runtime.ktx
+    implementation libs.lifecycle.livedata.ktx
+    implementation libs.lifecycle.viewmodel.ktx
 
-//    implementation 'com.caverock:androidsvg-aar:1.5'
+    coreLibraryDesugaring libs.core.desugar
 
     testImplementation 'junit:junit:4.13.2'
 
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
-
+    androidTestImplementation libs.compose.junit
 }
