@@ -1,7 +1,10 @@
-include ':mapsharedelementtransition'
 rootProject.name='Sandbox'
+
+include ':mapsharedelementtransition'
 include ':androidsvg:androidsvg'
 include ':svg-tester'
 include ':androidsvgcompose:library'
 include ':androidsvgcompose:androidsvgcompose-sample'
 include ':compose-calendar'
+
+enableFeaturePreview('VERSION_CATALOGS')

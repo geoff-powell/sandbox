@@ -1,23 +1,23 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
 
 android {
     project.ext {
         compose_version = '0.1.0-dev04'
     }
 
-    compileSdkVersion 29
-    buildToolsVersion "29.0.3"
+    compileSdkVersion 30
+    buildToolsVersion libs.versions.buildTools.get()
 
     buildFeatures {
         // Enables Jetpack Compose for this module
         compose true
+        viewBinding true
     }
 
     defaultConfig {
         minSdkVersion 21
-        targetSdkVersion 29
+        targetSdkVersion 30
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles 'consumer-rules.pro'
@@ -39,25 +39,22 @@ android {
     }
 
     composeOptions {
-        kotlinCompilerVersion versions.kotlin
-        kotlinCompilerExtensionVersion versions.compose
+        kotlinCompilerExtensionVersion libs.versions.compose.get()
     }
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    implementation deps.kotlin.core
+    implementation libs.kotlin.core
 
-    implementation deps.compose.layout
-    implementation deps.compose.material
-    implementation deps.compose.tooling
-    implementation deps.compose.framework
+    implementation libs.compose.material
+    implementation libs.compose.tooling
 
-    api 'com.caverock:androidsvg-aar:1.5'
+//    api 'com.caverock:androidsvg-aar:1.5'
 
-    testImplementation 'junit:junit:4.12'
+    testImplementation 'junit:junit:4.13.2'
 
-    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 }

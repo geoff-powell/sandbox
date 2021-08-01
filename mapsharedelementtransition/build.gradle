@@ -5,7 +5,7 @@ plugins {
 
 android {
     compileSdkVersion 30
-    buildToolsVersion "30.0.3"
+    buildToolsVersion libs.versions.buildTools.get()
 
     defaultConfig {
         applicationId "com.greenmist.android.mapsharedelementtransition"
@@ -30,14 +30,14 @@ android {
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_1_8.toString()
     }
-    viewBinding {
-        enabled = true
+    buildFeatures {
+        viewBinding = true
     }
 }
 
 dependencies {
 
-    implementation deps.kotlin.core
+    implementation libs.kotlin.core
     implementation 'androidx.core:core-ktx:1.2.0'
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'androidx.fragment:fragment:1.2.4'
